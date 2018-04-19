@@ -315,6 +315,8 @@ LiveServer.start = function(options) {
 	// WebSocket
 	var clients = [];
 	server.addListener('upgrade', function(request, socket, head) {
+		LiveServer.clients = clients;
+
 		var ws = new WebSocket(request, socket, head);
 		ws.onopen = function() { ws.send('connected'); };
 
@@ -333,7 +335,7 @@ LiveServer.start = function(options) {
 		}
 
 		ws.onclose = function() {
-			clients = clients.filter(function (x) {
+			LiveServer.clients = clients = clients.filter(function (x) {
 				return x !== ws;
 			});
 		};
@@ -394,6 +396,17 @@ LiveServer.shutdown = function() {
 	var server = LiveServer.server;
 	if (server)
 		server.close();
+};
+
+LiveServer.sendClients = function(line) {
+	if (line && LiveServer.clients) {
+		if (LiveServer.logLevel >= 1) {
+			console.log("Sending message", line);
+		}
+		LiveServer.clients.forEach(function(ws) {
+			if (ws) ws.send(line);
+		});
+	}
 };
 
 module.exports = LiveServer;

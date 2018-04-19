@@ -1,7 +1,7 @@
 {
-  "name": "live-server",
+  "name": "uvw-live-server",
   "version": "1.2.0",
-  "description": "simple development http server with live reload capability",
+  "description": "simple development http server with live reload capability (forked from tapio/live-server to allow sending messages from the server to clients)",
   "keywords": [
     "front-end",
     "development",
@@ -10,7 +10,7 @@
     "http",
     "cli"
   ],
-  "author": "Tapio Vierros",
+  "author": "uvworkspace <uvw@mytraces.net>",
   "dependencies": {
     "chokidar": "^1.6.0",
     "colors": "latest",
