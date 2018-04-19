@@ -1,3 +1,7 @@
+Note
+====
+This is adapted from [tapio/live-server](https://github.com/tapio/live-server) to allow the server to send additional messages to clients via the established WebSocket connections.
+
 [![view on npm](http://img.shields.io/npm/v/live-server.svg)](https://www.npmjs.org/package/live-server)
 [![npm module downloads per month](http://img.shields.io/npm/dm/live-server.svg)](https://www.npmjs.org/package/live-server)
 [![build status](https://travis-ci.org/tapio/live-server.svg)](https://travis-ci.org/tapio/live-server)
@@ -254,6 +258,7 @@ Version history
 
 License
 -------
+Below are the license terms in [tapio/live-server](https://github.com/tapio/live-server):
 
 Uses MIT licensed code from [Connect](https://github.com/senchalabs/connect/) and  [Roots](https://github.com/jenius/roots).
 
